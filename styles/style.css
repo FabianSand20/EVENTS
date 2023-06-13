@@ -1,0 +1,29 @@
+/* Cards de los Evenmtos */
+
+.events-grid {
+  display: grid;
+  grid-gap: 20px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.event img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Botones del menu */
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+} 
+
+.tab {
+  display: inline-block;
+  padding: 10px 20px;
+  color: #000000;
+  border: none;
+}
+

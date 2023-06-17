@@ -1,10 +1,16 @@
-/* Cards de los Evenmtos */
+/* Cards de los Eventos */
 
 .events-grid {
   display: grid;
+  grid-template-columns: repeat(4, minmax(250px, 1fr));
   grid-gap: 20px;
   margin-top: 20px;
   width: 100%;
+}
+
+.event {
+  border: 1px solid #ccc;
+  padding: 10px;
 }
 
 .event img {
@@ -15,6 +21,7 @@
 /* Botones del menu */
 
 .tabs {
+  background-color: #000;
   display: flex;
   justify-content: center;
   margin-top: 20px;
@@ -23,7 +30,56 @@
 .tab {
   display: inline-block;
   padding: 10px 20px;
-  color: #000000;
+  background-color: #000;
+  color: #ffffff;
   border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
 }
 
+.tab:hover,
+.tab:focus {
+  background-color: #fff;
+  color: #000;
+}
+
+.tab.active {
+  background-color: #f0f0f0;
+  color: #000;
+}
+
+/* Boton de Favoritos */
+
+.favorite-button {
+  cursor: pointer;
+  outline: none;
+  padding: 10px;
+  margin-right: 15px;
+}
+
+.favorite-button i {
+  color: #ccc;
+  font-size: 20px;
+}
+
+.favorite-button i.filled {
+  color: red;
+}
+
+/* Boton de Going - Interested - remove */
+
+.interested-button,
+.going-button {
+  background-color: #000;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+  padding: 5px 10px;
+  margin-top: 5px;
+}
+
+.remove-message {
+  color: red;
+  margin-top: 5px;
+}

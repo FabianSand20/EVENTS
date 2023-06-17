@@ -30,6 +30,21 @@ export function renderEvents(events) {
     priceElement.textContent = formatPrice(event.price);
     eventElement.appendChild(priceElement);
 
+    const favoriteButton = document.createElement('button');
+    favoriteButton.innerHTML = '<i class="fas fa-heart"></i>';
+    favoriteButton.classList.add('favorite-button');
+    eventElement.appendChild(favoriteButton);
+
+    const interestedButton = document.createElement('button');
+    interestedButton.textContent = 'Interested';
+    interestedButton.classList.add('interested-button');
+    eventElement.appendChild(interestedButton);
+
+    const goingButton = document.createElement('button');
+    goingButton.textContent = 'Going!';
+    goingButton.classList.add('going-button');
+    eventElement.appendChild(goingButton);
+
     eventsGrid.appendChild(eventElement);
   });
 }

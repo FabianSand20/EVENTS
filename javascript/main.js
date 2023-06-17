@@ -1,27 +1,43 @@
-import { getEvents } from './modules/api.js';
-import cache from './modules/cache.js';
-import { renderEvents } from './modules/render.js';
+import { createTabButton, handleTabClick, addToFavorites, addToInterested, addToGoing, removeFromInterested, removeFromGoing } from './eventHandlers.js';
 
-// Controla los eventos del click en los botones del menu 
+// Obtiene los tabs y agregar los botones
+const tabContainer = document.getElementById('tabs');
+const categories = ['music', 'sports', 'business', 'food', 'art'];
+categories.forEach(category => {
+  const button = createTabButton(category);
+  button.addEventListener('click', handleTabClick);
+  tabContainer.appendChild(button);
+});
 
-function handleTabClick(event) {
-  const tabs = document.querySelectorAll('.tab');
-  tabs.forEach(tab => tab.classList.remove('active'));
 
-  event.target.classList.add('active');
-  const category = event.target.id.split('-')[0];
-
-  if (cache[category]) {
-    renderEvents(cache[category]);
-  } else {
-    getEvents(category).then(events => {
-      cache[category] = events;
-      renderEvents(events);
-    });
+// Agregar eventos a los botones de interacción
+document.addEventListener('click', event => {
+  if (event.target.classList.contains('favorite-button')) {
+    addToFavorites(event);
   }
-}
 
-// Realiza el llamaado a los Botones del menu
+  if (event.target.classList.contains('interested-button')) {
+    addToInterested(event);
+  }
 
-const tabs = document.querySelectorAll('.tab');
-tabs.forEach(tab => tab.addEventListener('click', handleTabClick));
+  if (event.target.classList.contains('going-button')) {
+    addToGoing(event);
+  }
+
+  if (event.target.classList.contains('remove-message')) {
+    const removeMessage = event.target;
+    const eventElement = removeMessage.closest('.event');
+
+    if (eventElement.classList.contains('favorite')) {
+      eventElement.classList.remove('favorite');
+    }
+
+    eventElement.querySelector('.remove-message').remove();
+    const interestedButton = document.createElement('button');
+    interestedButton.textContent = 'Interested';
+    interestedButton.classList.add('interested-button');
+
+    interestedButton.addEventListener('click', addToInterested);
+    eventElement.appendChild(interestedButton);
+  }
+});

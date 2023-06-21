@@ -1,4 +1,4 @@
-//Almacena temporalmente los eventos
+// !Almacena temporalmente los eventos
 
 const cache = new Proxy({}, {
   get(target, property) {

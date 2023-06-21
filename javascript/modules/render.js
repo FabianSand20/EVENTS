@@ -1,4 +1,4 @@
-//Muestra todos los eventos solicitados
+// !Muestra todos los eventos solicitados
 
 import { formatDate, formatPrice } from './events.js';
 

@@ -1,4 +1,4 @@
-//Se tiene la informacion del evento
+// !Se tiene la informacion del evento
 
 export function formatDate(timestamp) {
   const options = { weekday: 'long', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' };

@@ -1,6 +1,6 @@
 import { createTabButton, handleTabClick, addToFavorites, addToInterested, addToGoing, removeFromInterested, removeFromGoing } from './eventHandlers.js';
 
-// Obtiene los tabs y agregar los botones
+// !Obtiene los tabs y agregar los botones
 const tabContainer = document.getElementById('tabs');
 const categories = ['music', 'sports', 'business', 'food', 'art'];
 categories.forEach(category => {
@@ -10,7 +10,7 @@ categories.forEach(category => {
 });
 
 
-// Agregar eventos a los botones de interacción
+// !Agregar eventos a los botones de interacción
 document.addEventListener('click', event => {
   if (event.target.classList.contains('favorite-button')) {
     addToFavorites(event);

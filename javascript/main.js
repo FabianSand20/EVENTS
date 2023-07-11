@@ -1,4 +1,5 @@
-import { createTabButton, handleTabClick, addToFavorites, addToInterested, addToGoing, removeFromInterested, removeFromGoing } from './eventHandlers.js';
+import { createTabButton, handleTabClick } from './modules/tabs.js';
+import { addToFavorites, addToInterested, addToGoing, removeFromInterested, removeFromGoing } from './modules/eventHandlers.js';
 
 // !Obtiene los tabs y agregar los botones
 const tabContainer = document.getElementById('tabs');

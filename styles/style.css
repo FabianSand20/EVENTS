@@ -83,3 +83,35 @@
   color: red;
   margin-top: 5px;
 }
+
+/* !Estilos del enlace "Back" */
+.back-link {
+  display: inline-block;
+  padding: 10px;
+  background-color: #000;
+  color: #fff;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.back-link:hover,
+.back-link:focus {
+  background-color: #fff;
+  color: #000;
+}
+
+/* !Estilos del enlace "My Account" */
+.my-account-link {
+  display: inline-block;
+  padding: 10px;
+  background-color: #000;
+  color: #fff;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.my-account-link:hover,
+.my-account-link:focus {
+  background-color: #fff;
+  color: #000;
+}
